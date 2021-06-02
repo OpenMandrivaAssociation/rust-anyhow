@@ -6,9 +6,9 @@
 
 Name:           rust-%{crate}
 Version:        1.0.40
-Release:        1%{?dist}
+Release:        1
 Summary:        Flexible concrete Error type built on std::error::Error
-
+Group:		System/Libraries
 # Upstream license specification: MIT OR Apache-2.0
 License:        MIT or ASL 2.0
 URL:            https://crates.io/crates/anyhow
@@ -29,6 +29,7 @@ Flexible concrete Error type built on std::error::Error.}
 %package        devel
 Summary:        %{summary}
 BuildArch:      noarch
+Group:		Development/Other
 
 %description    devel %{_description}
 
@@ -43,6 +44,7 @@ which use "%{crate}" crate.
 %package     -n %{name}+default-devel
 Summary:        %{summary}
 BuildArch:      noarch
+Group:		Development/Other
 
 %description -n %{name}+default-devel %{_description}
 
@@ -55,6 +57,7 @@ which use "default" feature of "%{crate}" crate.
 %package     -n %{name}+backtrace-devel
 Summary:        %{summary}
 BuildArch:      noarch
+Group:		Development/Other
 
 %description -n %{name}+backtrace-devel %{_description}
 
@@ -67,6 +70,7 @@ which use "backtrace" feature of "%{crate}" crate.
 %package     -n %{name}+std-devel
 Summary:        %{summary}
 BuildArch:      noarch
+Group:		Development/Other
 
 %description -n %{name}+std-devel %{_description}
 
@@ -93,55 +97,3 @@ which use "std" feature of "%{crate}" crate.
 %check
 %cargo_test
 %endif
-
-%changelog
-* Sun Mar 28 2021 Fabio Valentini <decathorpe@gmail.com> - 1.0.40-1
-- Update to version 1.0.40.
-- Fixes RHBZ#1943642
-
-* Sun Mar 21 2021 Fabio Valentini <decathorpe@gmail.com> - 1.0.39-1
-- Update to version 1.0.39.
-- Fixes RHBZ#1941120
-
-* Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.38-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
-
-* Mon Jan 11 2021 Fabio Valentini <decathorpe@gmail.com> - 1.0.38-1
-- Update to version 1.0.38.
-- Fixes RHBZ#1914718
-
-* Tue Dec 29 2020 Fabio Valentini <decathorpe@gmail.com> - 1.0.37-1
-- Update to version 1.0.37.
-- Fixes RHBZ#1911354
-
-* Sat Dec 26 12:15:27 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 1.0.36-1
-- Update to 1.0.36
-
-* Mon Dec 07 2020 Fabio Valentini <decathorpe@gmail.com> - 1.0.35-1
-- Update to version 1.0.35.
-- Fixes RHBZ#1904750
-
-* Thu Nov 05 2020 Fabio Valentini <decathorpe@gmail.com> - 1.0.34-1
-- Update to version 1.0.34.
-- Fixes RHBZ#1893913
-
-* Wed Oct 07 2020 Fabio Valentini <decathorpe@gmail.com> - 1.0.33-1
-- Update to version 1.0.33.
-
-* Wed Jul 29 2020 Josh Stone <jistone@redhat.com> - 1.0.32-1
-- Update to 1.0.32
-
-* Fri May 15 2020 Josh Stone <jistone@redhat.com> - 1.0.31-1
-- Update to 1.0.31
-
-* Wed May 13 2020 Josh Stone <jistone@redhat.com> - 1.0.30-1
-- Update to 1.0.30
-
-* Wed Apr 01 2020 Josh Stone <jistone@redhat.com> - 1.0.28-1
-- Update to 1.0.28
-
-* Sun Mar 15 09:06:14 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 1.0.27-1
-- Update to 1.0.27
-
-* Fri Feb 14 10:34:04 CET 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 1.0.26-1
-- Initial package
