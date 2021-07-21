@@ -5,7 +5,7 @@
 %global crate anyhow
 
 Name:           rust-%{crate}
-Version:        1.0.40
+Version:        1.0.42
 Release:        1
 Summary:        Flexible concrete Error type built on std::error::Error
 Group:		System/Libraries
