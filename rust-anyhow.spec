@@ -4,46 +4,45 @@
 
 %global crate anyhow
 
-Name:           rust-%{crate}
-Version:        1.0.42
-Release:        1
-Summary:        Flexible concrete Error type built on std::error::Error
+Name:		rust-%{crate}
+Version:	1.0.42
+Release:	1
+Summary:	Flexible concrete Error type built on std::error::Error
 Group:		System/Libraries
 # Upstream license specification: MIT OR Apache-2.0
-License:        MIT or ASL 2.0
-URL:            https://crates.io/crates/anyhow
-Source:         %{crates_source}
+License:	MIT or ASL 2.0
+URL:		https://crates.io/crates/anyhow
+Source:		%{crates_source}
 
-ExclusiveArch:  %{rust_arches}
+ExclusiveArch:	%{rust_arches}
 %if %{__cargo_skip_build}
-BuildArch:      noarch
+BuildArch:	noarch
 %endif
-
-BuildRequires:  rust-packaging
+BuildRequires:	rust-packaging
 
 %global _description %{expand:
 Flexible concrete Error type built on std::error::Error.}
 
 %description %{_description}
 
-%package        devel
-Summary:        %{summary}
-BuildArch:      noarch
+%package devel
+Summary:	%{summary}
+BuildArch:	noarch
 Group:		Development/Other
 
-%description    devel %{_description}
+%description devel %{_description}
 
 This package contains library source intended for building other packages
 which use "%{crate}" crate.
 
-%files          devel
+%files devel
 %license LICENSE-MIT LICENSE-APACHE
 %doc README.md
 %{cargo_registry}/%{crate}-%{version_no_tilde}/
 
-%package     -n %{name}+default-devel
-Summary:        %{summary}
-BuildArch:      noarch
+%package -n %{name}+default-devel
+Summary:	%{summary}
+BuildArch:	noarch
 Group:		Development/Other
 
 %description -n %{name}+default-devel %{_description}
@@ -51,12 +50,12 @@ Group:		Development/Other
 This package contains library source intended for building other packages
 which use "default" feature of "%{crate}" crate.
 
-%files       -n %{name}+default-devel
+%files -n %{name}+default-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+backtrace-devel
-Summary:        %{summary}
-BuildArch:      noarch
+%package -n %{name}+backtrace-devel
+Summary:	%{summary}
+BuildArch:	noarch
 Group:		Development/Other
 
 %description -n %{name}+backtrace-devel %{_description}
@@ -64,12 +63,12 @@ Group:		Development/Other
 This package contains library source intended for building other packages
 which use "backtrace" feature of "%{crate}" crate.
 
-%files       -n %{name}+backtrace-devel
+%files -n %{name}+backtrace-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+std-devel
-Summary:        %{summary}
-BuildArch:      noarch
+%package -n %{name}+std-devel
+Summary:	%{summary}
+BuildArch:	noarch
 Group:		Development/Other
 
 %description -n %{name}+std-devel %{_description}
@@ -77,7 +76,7 @@ Group:		Development/Other
 This package contains library source intended for building other packages
 which use "std" feature of "%{crate}" crate.
 
-%files       -n %{name}+std-devel
+%files -n %{name}+std-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
 %prep
