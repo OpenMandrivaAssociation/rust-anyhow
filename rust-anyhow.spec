@@ -6,7 +6,7 @@
 
 Name:		rust-%{crate}
 Version:	1.0.42
-Release:	1
+Release:	2
 Summary:	Flexible concrete Error type built on std::error::Error
 Group:		System/Libraries
 # Upstream license specification: MIT OR Apache-2.0
